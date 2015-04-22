@@ -37,7 +37,7 @@ public abstract class Vehiculo {
 		return matricula;
 		}
 	
-		private void setMatricula(String matricula) {
+		public void setMatricula(String matricula) {
 		
 		this.matricula = matricula;		
 		}
@@ -68,7 +68,7 @@ public abstract class Vehiculo {
 			return marca;
 		}
 		
-		private void setMarca(String marca) {
+		public void setMarca(String marca) {
 			
 			this.marca = marca;
 		}

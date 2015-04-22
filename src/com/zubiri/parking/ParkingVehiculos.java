@@ -75,7 +75,7 @@ public class ParkingVehiculos {
 	  	public static void findVehiculo(String matricula){
 			for (int i = 0; i < parkingvehiculos.size(); i++) {
 	  			if (parkingvehiculos.get(i).getMatricula().equals(matricula)) {
-	  				System.out.println(parkingvehiculos.get(i).formatted());
+	  				System.out.println(parkingvehiculos.get(i));
 					break;
 	  			}
 			}
