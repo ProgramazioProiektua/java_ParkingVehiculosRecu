@@ -24,27 +24,15 @@ public class ParkingVehiculos {
 
 	//metodo para insertar un vehiculo nuevo
 		public static void addVehi(Scanner sc) {
-			System.out.println("¿Que vehiculo quieres añadir?");
 			for (int i = 0; getContVehiculos() > i; i++){
-			System.out.println("Coche------------------------1");
-			System.out.println("Bici-------------------------2");
-			int opcion = sc.nextInt();
-			switch (opcion) {
-			case 1:
 				parkingvehiculos.add(new Coche(sc));
 				ParkingVehiculos.sumarVehiculo();
-				break;
-			case 2:
-				parkingvehiculos.add(new Bicicleta(sc));
-				ParkingVehiculos.sumarVehiculo();
-				break;
-			}
 			}
 		}
 	
 		public static void mostrarParking() {
 			if (getParkingVehiculos().size() == 0) {
-				System.out.println("No se han cargado los vehículos");
+				System.out.println("No se han cargado los coches");
 			}
 			
 			for (int i=0; i<getParkingVehiculos().size(); i++) {
@@ -71,8 +59,11 @@ public class ParkingVehiculos {
 			
 		}
 		
-		public static void deleteVehiculo(){
-			parkingvehiculos.remove(findVehiculo());
+		public static void deleteVehiculo(String matricula){
+			for (int b = 0; b < parkingvehiculos.size(); b++) {
+			if (parkingvehiculos.get(b).getMatricula().equalsIgnoreCase(matricula)) {
+				parkingvehiculos.remove(b);}
+			}
 	  		/*for (int i = 0; i < parkingvehiculos.size(); i++) {
 	  			if (parkingvehiculos.get(i).equals(Vehiculo.getMarca())) {
 	  				parkingvehiculos.remove(i);
@@ -81,18 +72,13 @@ public class ParkingVehiculos {
 	  		}*/
 	  	}
 		
-	  	public static Vehiculo findVehiculo(){
-	  		Vehiculo vehiculo = null;
-			Scanner sc = new Scanner(System.in);
-	  		System.out.println("Marca del vehiculo que desea buscar: ");
-			String pedirMarca = sc.next();
-	  		for (int i = 0; i < parkingvehiculos.size(); i++) {
-	  			if (parkingvehiculos.get(i).getMarca().equals(pedirMarca)) {
-	  				vehiculo = parkingvehiculos.get(i);
-	  				break;
+	  	public static void findVehiculo(String matricula){
+			for (int i = 0; i < parkingvehiculos.size(); i++) {
+	  			if (parkingvehiculos.get(i).getMatricula().equals(matricula)) {
+	  				System.out.println(parkingvehiculos.get(i).formatted());
+					break;
 	  			}
-	  		}
-	  		return vehiculo;
+			}
 	  	}
 		
 	//Getter setter

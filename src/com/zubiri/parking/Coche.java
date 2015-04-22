@@ -4,22 +4,18 @@ import java.util.Scanner;
 
 public class Coche extends Vehiculo {
 
-	String matricula = null;
 	boolean automatico = false;
 	int consumo100km = 0;
 	
 	//Constructores
-	public Coche(int numRuedas, boolean motor, String marca, String matricula, boolean automatico, int consumo100km) {
-		super(numRuedas, motor, marca);
-		this.matricula = matricula;
+	public Coche(String matricula, int numRuedas, String combustible, String marca, boolean automatico, int consumo100km) {
+		super(matricula, numRuedas, combustible, marca);
 		this.automatico = automatico;
 		this.consumo100km = consumo100km;
 	}
 	
 	public Coche(Scanner sc){
 		super(sc);
-		System.out.println("Inserta la matricula: ");
-		this.setMatricula(sc.next());
 		System.out.println("Es automatico? ");
 		this.setAutomatico(sc.nextBoolean());
 		System.out.println("Consumo por cada 100 km: ");
@@ -28,16 +24,6 @@ public class Coche extends Vehiculo {
 	}
 	
 	//Metodos getter y setter
-	
-	public String getMatricula() {
-		
-		return matricula;
-	}
-	
-	private void setMatricula(String matricula) {
-		
-		this.matricula = matricula;		
-	}
 
 	public boolean getAutomatico() {
 		
@@ -70,20 +56,19 @@ public class Coche extends Vehiculo {
     
     public String formatted() {
 		String cocheFormatted = 
-				"\nMatricula:\t" + this.getMatricula() + "\n" + 
-				"\nAutomatico:\t" + this.getAutomatico() + "\n"
-						+ "Consumo a los 100km:\t" + this.getConsumo100km() + "\n";
+				super.formatted() +
+				"Automatico:\t" + this.getAutomatico() + "\n" +
+				"Consumo a los 100km:\t" + this.getConsumo100km();
 		
 		return cocheFormatted;
 	}
-    
-    public void mostrarCoche(){
+
+@Override
+    public void mostrarVehiculo(){
 		
-		System.out.println("Coche:");
 		super.mostrarVehiculo();
-		System.out.println("\nMatricula " + this.matricula);
 		System.out.println("\tAutomatico? " + this.automatico);
-		System.out.println("\tConsumo por cada 100km: " + this.consumo100km);
+		System.out.println("\tConsumo por cada 100km: " + this.consumo100km + "\n");
 	}
 	
 }

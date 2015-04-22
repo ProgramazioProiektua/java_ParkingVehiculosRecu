@@ -1,7 +1,7 @@
 package com.zubiri.parking;
 
-import java.util.ArrayList;
 import java.util.Scanner;
+
 
 
 public class Main {
@@ -19,21 +19,25 @@ public class Main {
 		System.out.println("Mostrar todo el parking:   4");
 		System.out.println("Salir:   5");
 
+
 		opcion1 = sc.nextInt();
 		
 				switch (opcion1 ) {
 		case 1:
-			ParkingVehiculos parkingvehiculos = new ParkingVehiculos(sc);
+			new ParkingVehiculos(sc);
+			//ParkingVehiculos parkingvehiculos = new ParkingVehiculos(sc);
 			ParkingVehiculos.addVehi(sc);
 			break;
 		case 2:
-			ParkingVehiculos.deleteVehiculo();
+			System.out.print("Introduce la matricula del coche a borrar: ");
+			ParkingVehiculos.deleteVehiculo(sc.next());
 			break;
 		case 3:
-			ParkingVehiculos.findVehiculo();
+			System.out.print("Matricula a buscar: ");
+			ParkingVehiculos.findVehiculo(sc.next());
 			break;
 		case 4:
-			ParkingVehiculos.mostrarParking();
+			System.out.println(ParkingVehiculos.formattedParking());
 			break;
 		}
 		}
