@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class ParkingVehiculos {
 
 	//atributos
-	private static ArrayList<Vehiculo> parkingvehiculos = new ArrayList<Vehiculo>();
-	private static int numVehiculos = 0;
-	private static int contVehiculos = 0;
+	public static ArrayList<Vehiculo> parkingvehiculos = new ArrayList<Vehiculo>();
+	public static int numVehiculos = 0;
+	public static int contVehiculos = 0;
 	
 	
 	//constructores
