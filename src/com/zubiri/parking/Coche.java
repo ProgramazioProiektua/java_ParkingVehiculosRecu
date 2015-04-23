@@ -68,7 +68,9 @@ public class Coche extends Vehiculo {
 		
 		super.mostrarVehiculo();
 		System.out.println("	Automatico? " + this.automatico);
-		System.out.println("	Consumo por cada 100km: " + this.consumo100km + "<br/>");
+		System.out.println("	Consumo por cada 100km: " + this.consumo100km + "<br/><br/>");
+		System.out.println("	--------	<br/><br/>");
+
 	}
 	
 }
