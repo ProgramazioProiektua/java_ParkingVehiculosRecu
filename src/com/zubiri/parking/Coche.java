@@ -57,8 +57,8 @@ public class Coche extends Vehiculo {
     public String formatted() {
 		String cocheFormatted = 
 				super.formatted() +
-				"Automatico:\t" + this.getAutomatico() + "\n" +
-				"Consumo a los 100km:\t" + this.getConsumo100km();
+				"Automatico:	" + this.getAutomatico() + "<br/>" +
+				"Consumo a los 100km:	" + this.getConsumo100km();
 		
 		return cocheFormatted;
 	}
@@ -67,8 +67,8 @@ public class Coche extends Vehiculo {
     public void mostrarVehiculo(){
 		
 		super.mostrarVehiculo();
-		System.out.println("\tAutomatico? " + this.automatico);
-		System.out.println("\tConsumo por cada 100km: " + this.consumo100km + "\n");
+		System.out.println("	Automatico? " + this.automatico);
+		System.out.println("	Consumo por cada 100km: " + this.consumo100km + "<br/>");
 	}
 	
 }

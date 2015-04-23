@@ -43,14 +43,14 @@ public class ParkingVehiculos {
 		
 		public static String formattedParking() {
 			String parkingFormateada =
-					"\n*******************************************" + 
-					"\n*----------Parking al completo----------*";
+					"<br/>*******************************************" + 
+					"<br/>*----------Parking al completo----------*";
 			for (int f = 0; f < parkingvehiculos.size(); f++) {
 				parkingFormateada += parkingvehiculos.get(f).formatted();
 			}
 			parkingFormateada += 
-					"\n*------------------FIN--------------------*" +
-					"\n*******************************************";
+					"<br/>*------------------FIN--------------------*" +
+					"<br/>*******************************************";
 			return parkingFormateada;
 		}
 		

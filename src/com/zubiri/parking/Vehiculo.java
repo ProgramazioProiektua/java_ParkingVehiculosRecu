@@ -75,10 +75,10 @@ public abstract class Vehiculo {
 	//Otros metodos
 		public String formatted() {
 		String vehiculoFormatted = 
-						"\nMatricula:\t" + this.getMatricula() + 
-						"\nMarca:\t" + this.getMarca() + "\n"
-						+ "Numero de ruedas:\t" + this.getNumRuedas() + "\n"
-						+ "Combustible: " + this.getCombustible() + "\n";
+						"<br/>Matricula:	" + this.getMatricula() + 
+						"<br/>Marca:	" + this.getMarca() + "<br/>"
+						+ "Numero de ruedas:	" + this.getNumRuedas() + "<br/>"
+						+ "Combustible: 	" + this.getCombustible() + "<br/>";
 		
 		return vehiculoFormatted;
 	}
@@ -86,8 +86,8 @@ public abstract class Vehiculo {
 	public void mostrarVehiculo(){
 		
 		System.out.println("Coche:");
-		System.out.println("\tMarca: " + this.marca);
-		System.out.println("\tNumero de ruedas: " + this.numRuedas);
-		System.out.println("\tTipo de combustible: " + this.combustible);
+		System.out.println("	Marca: " + this.marca);
+		System.out.println("	Numero de ruedas: " + this.numRuedas);
+		System.out.println("	Tipo de combustible: " + this.combustible);
 	}
 }
